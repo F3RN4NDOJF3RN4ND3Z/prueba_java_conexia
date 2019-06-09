@@ -52,24 +52,15 @@ public class RestauranteController extends HttpServlet {
 				//index(request, response);
                                 adminMesas(request,response);
 				break;
-			case "nuevo":
-				//nuevo(request, response);
+			case "clientesAdmin":
+				adminClientes(request, response);
 				break;
-			case "register":
-				System.out.println("entro");
+			case "camamerosAdmin":
+                                adminCamareros(request, response);
 				//registrar(request, response);
 				break;
-			case "mostrar":
-				//mostrar(request, response);
-				break;
-			case "showedit":
-				//showEditar(request, response);
-				break;	
-			case "editar":
-				//editar(request, response);
-				break;
-			case "eliminar":
-				//eliminar(request, response);
+			case "facturasAdmin":
+                                adminFacturas(request, response);
 				break;
 			default:
 				break;
@@ -107,6 +98,19 @@ public class RestauranteController extends HttpServlet {
 
     private void adminMesas(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher dispatcher= request.getRequestDispatcher("Mesa/mesa_admin.jsp");
+        dispatcher.forward(request, response);
+    }
+     private void adminFacturas(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        RequestDispatcher dispatcher= request.getRequestDispatcher("Facturas/factura_admin.jsp");
+        dispatcher.forward(request, response);
+    }
+    private void adminClientes(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        RequestDispatcher dispatcher= request.getRequestDispatcher("Cliente/cliente_admin.jsp");
+        dispatcher.forward(request, response);
+    }
+    
+    private void adminCamareros(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        RequestDispatcher dispatcher= request.getRequestDispatcher("Camarero/camarero_admin.jsp");
         dispatcher.forward(request, response);
     }
 

@@ -16,6 +16,12 @@
     <body>
         <div>
             <a href="RestauranteController?action=mesaAdmin">Administrar Mesas</a>
+            <br>
+            <a href="RestauranteController?action=clientesAdmin">Administrar Clientes</a>
+            <br>
+            <a href="RestauranteController?action=camamerosAdmin">Administrar Camareros</a>
+            <br>
+            <a href="RestauranteController?action=facturasAdmin">Administrar Facturas</a>
         </div>
         
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
