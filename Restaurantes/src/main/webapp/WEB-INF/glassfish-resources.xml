@@ -6,7 +6,7 @@
         <property name="portNumber" value="5432"/>
         <property name="databaseName" value="conexia_test"/>
         <property name="User" value="postgres"/>
-        <property name="Password" value="80845639"/>
+        <property name="Password" value="admin"/>
         <property name="URL" value="jdbc:postgresql://localhost:5432/conexia_test"/>
         <property name="driverClass" value="org.postgresql.Driver"/>
     </jdbc-connection-pool>

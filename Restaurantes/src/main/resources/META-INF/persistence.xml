@@ -18,7 +18,7 @@
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/conexia_test"/>
       <property name="javax.persistence.jdbc.user" value="postgres"/>
       <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-      <property name="javax.persistence.jdbc.password" value="80845639"/>
+      <property name="javax.persistence.jdbc.password" value="admin"/>
     </properties>
   </persistence-unit>
 </persistence>

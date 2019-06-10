@@ -5,6 +5,7 @@
  */
 package com.conexia.prueba.restaurantes.controller;
 
+import com.conexia.prueba.restaurantes.dao.DAOMesa;
 import com.conexia.prueba.restaurantes.dao.MesaDAO;
 import com.conexia.prueba.restaurantes.model.Mesa;
 import java.io.IOException;
@@ -28,19 +29,22 @@ public class MesaController extends HttpServlet {
     
     private static final Logger logger= Logger.getLogger(MesaController.class.getName());
      
-    private MesaDAO mesaDAO;
+    private DAOMesa mesaDAO;
     private List<Mesa> listaMesas=new ArrayList<>();
     public MesaController(){
         super();
         
     }
+    @PostConstruct
+    public void inicializarMesas(){
+        mesaDAO= new DAOMesa();        
+        
+    }
     public void init(){
        try{
             logger.log(Level.INFO,"Mesas Init");
-            mesaDAO= new MesaDAO();
-            this.listaMesas=mesaDAO.findMesaEntities();
-            logger.log(Level.INFO,"Mesas Listar");
-            logger.log(Level.INFO,"Numero de mesas:" + this.listaMesas.size());
+           
+            
         }catch(Exception e){
             logger.log(Level.SEVERE,"Error al listar mesas",e);
         }
@@ -57,7 +61,9 @@ public class MesaController extends HttpServlet {
 			case "Regresar":
 				index(request, response);
 				break;
-			
+			case "Listar":
+				listar(request, response);
+				break;
 			case "Editar":
 				editar(request, response);
 				break;
@@ -86,6 +92,12 @@ public class MesaController extends HttpServlet {
     private void agregar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         RequestDispatcher dispatcher = request.getRequestDispatcher("Mesa/agregar.jsp");
         dispatcher.forward(request, response);
+    }
+
+    private void listar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setAttribute("listaMesas", listaMesas);
+	RequestDispatcher dispatcher = request.getRequestDispatcher("Mesa/mesa_admin.jsp");
+	dispatcher.forward(request, response);
     }
 	
 	
