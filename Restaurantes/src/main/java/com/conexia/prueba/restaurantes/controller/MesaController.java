@@ -40,6 +40,7 @@ public class MesaController extends HttpServlet {
             mesaDAO= new MesaDAO();
             this.listaMesas=mesaDAO.findMesaEntities();
             logger.log(Level.INFO,"Mesas Listar");
+            logger.log(Level.INFO,"Numero de mesas:" + this.listaMesas.size());
         }catch(Exception e){
             logger.log(Level.SEVERE,"Error al listar mesas",e);
         }
